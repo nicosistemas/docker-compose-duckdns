@@ -1,0 +1,15 @@
+version: "2"
+services:
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000 #optional
+      - PGID=1000 #optional
+      - TZ=America/Argentina
+      - SUBDOMAINS=nicosistemas
+      - TOKEN=5e00cd51-194f-43c5-bbf0-72616324dec8
+      - LOG_FILE=false #optional
+    volumes:
+      - /path/to/appdata/config:/config #optional
+    restart: unless-stopped
